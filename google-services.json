@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "48339603916",
+    "firebase_url": "https://plantdoctor-37748.firebaseio.com",
+    "project_id": "plantdoctor-37748",
+    "storage_bucket": "plantdoctor-37748.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48339603916:android:b01db18433589acd",
+        "android_client_info": {
+          "package_name": "org.tensorflow.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48339603916-d2p6i7hmcuj6sca1rubde8d0j1lnl5fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tensorflow.demo",
+            "certificate_hash": "5ac4083423c93e807224d8085fad55a742394cd3"
+          }
+        },
+        {
+          "client_id": "48339603916-qcl8oate1rcq5g3v250j4cbcmdgcoh59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUFNg9fTRND2SFpmcZJAe4-1tmKNzxmYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48339603916-qcl8oate1rcq5g3v250j4cbcmdgcoh59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

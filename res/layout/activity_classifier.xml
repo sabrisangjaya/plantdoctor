@@ -18,13 +18,13 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/buttonSelectPhoto"
-        android:text="@string/buttonSelectPhoto" />
+        android:text="Pilih File" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/buttonTakePhotoPhoto"
-        android:text="@string/buttonTakePhoto"/>
+        android:text="Kamera"/>
 
 
 </LinearLayout>
@@ -44,7 +44,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/buttonDiagnose" />
+        android:text="Diagnosa" />
+    <Button
+        android:id="@+id/buttonKirim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Kirim Data" />
 
     <TextView
         android:id="@+id/editText"
@@ -53,7 +59,7 @@
         android:padding="5dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Diagnosis Result:"
+        android:text="Hasil Diagnosa:"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         android:textStyle="bold|italic" />
@@ -61,15 +67,15 @@
     <TextView
         android:id="@+id/textClassificationResult"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_gravity="center"
-        android:editable="false"
-        android:paddingLeft="5dp"
         android:layout_marginLeft="5dp"
         android:background="@drawable/border"
+        android:editable="false"
+        android:paddingLeft="5dp"
         android:scrollbars="vertical"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         android:visibility="visible" />
 

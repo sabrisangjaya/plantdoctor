@@ -34,6 +34,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -80,10 +83,12 @@ public class ClassifierActivity extends Activity {
   private Button mButtonSelectPhoto;
   private Button mButtonTakePhoto;
   private Button mButtonDiagnose;
+  private Button mButtonKirim;
   private ImageView mImageView;
   private TextView mTextView;
   private File temFile;
   private Bitmap mDiagnosisBitmap;
+  private String hasil=" ";
 
   private static final int PHOTO_REQUEST_CAMERA = 1;
   private static final int PHOTO_REQUEST_GALLERY = 2;
@@ -104,6 +109,7 @@ public class ClassifierActivity extends Activity {
     mButtonSelectPhoto = (Button) findViewById(R.id.buttonSelectPhoto);
     mButtonTakePhoto = (Button) findViewById(R.id.buttonTakePhotoPhoto);
     mButtonDiagnose = (Button) findViewById(R.id.buttonDiagnose);
+    mButtonKirim = (Button) findViewById(R.id.buttonKirim);
     mImageView = (ImageView) findViewById(R.id.image);
     mTextView = (TextView) findViewById(R.id.textClassificationResult);
 
@@ -126,6 +132,15 @@ public class ClassifierActivity extends Activity {
       }
     });
 
+    mButtonKirim.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+        myRef.setValue(hasil);
+      }
+    });
+
     mButtonDiagnose.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -135,7 +150,11 @@ public class ClassifierActivity extends Activity {
           System.out.println("Result:"+result.getTitle()+" "+result.getConfidence()+result.toString());
 
         }
-        mTextView.setText(results.get(0).getTitle()+"  confidence:"+results.get(0).getConfidence());
+        for (int i=0;i<results.size();i++){
+          hasil +=results.get(i).getTitle()+"  confidence:"+results.get(i).getConfidence()+"\n";
+        }
+        mTextView.setText(hasil);
+        //mTextView.setText(results.get(0).getTitle()+"  confidence:"+results.get(0).getConfidence());
       }
     });
 
